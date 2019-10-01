@@ -24,6 +24,8 @@ app.use(morgan('dev'));
 // Allows me to use JSDocs
 app.use('/docs', express.static('docs'));
 
+
+// I forget what these two lines are for
 app.use(notFound);
 app.use(errorHandler);
 
