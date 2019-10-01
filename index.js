@@ -1,5 +1,6 @@
 'use strict';
 
+const server = require('')
 const mongoose = require('mongoose');
 
 const App = require('./src/app');
