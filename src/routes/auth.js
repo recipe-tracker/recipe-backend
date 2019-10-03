@@ -15,7 +15,6 @@ router.post('/signup', (req, res, next) => {
       res.set('token', req.token)
       res.cookie('auth', req.token);
       res.send(req.token);
-          // missing lines of code go back to old labs
     })
     .catch(next)
 })
