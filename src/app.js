@@ -7,8 +7,8 @@ const cors = require('cors');
 const morgan = require('morgan');
 
 // Middlewares are imported
-const notFound = require('../middleware/404');
-const errorHandler = require('../middleware/500');
+const notFound = require('../middleware/not-found');
+const errorHandler = require('../middleware/server-error');
 
 const apiRouter = require('./routes/api-router');
 
@@ -20,13 +20,14 @@ app.use(apiRouter);
 
 app.use(cors());
 app.use(morgan('dev'));
+app.use(express.json());
 
 // Allows me to use JSDocs
 app.use('/docs', express.static('docs'));
 
 
 // I forget what these two lines are for
-app.use(notFound);
+app.use('*',notFound);
 app.use(errorHandler);
 
 
